@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Using Template Strings</title>
+
+</head>
+
+<body>
+  <script type="text/javascript">
+        function print(firstName){
+            console.log("Hello " + firstName);
+
+            // now using a template string
+            // Template strings allow tapping into 
+            // the functionality of template languages
+            // to format Javascript code with variables.
+            console.log(`Hello ${firstName}`);
+        }
+
+
+        print("Antonio");
+
+        
+        function createEmail(firstName, purchasePrice){
+            var shipping = 5.95;
+
+            // Template strings allows to create strings that are
+            // longer and that have a lot of dynamic content in them.
+            console.log(
+                `Hi ${firstName}, Thanks for buying from us!
+                    Total: $${purchasePrice}
+                    Shipping: $${shipping}
+                    Grand Total: $${purchasePrice + shipping}
+                `
+
+            );
+        }
+
+        createEmail('Antonio', 100);
+
+  </script>
+
+</body>
+
+</html>

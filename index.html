@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript">
+       var nameBuilder = function(firstName="John", lastName="Doe"){
+         console.log(firstName + " " + lastName);
+       };
+
+       nameBuilder();
+
+    </script>
+    <style type="text/css">
+      section > div {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        float:left;
+        margin: 3px;
+        cursor: pointer;
+      }
+    </style>
+    <title>Let Keyword</title>
+  </head>
+  <body>
+
+    <header>
+      <h1>Click on a box</h1>
+    </header>
+    <section></section>
+    <script>
+      // The let keyword allows to declare variables that are limited
+      // in scope to the block, statement, or expression on which it is used.
+      // Unlike the var keyword which defines a variable globally or locally
+      // to an entire function regardless of block scope.
+     for(let i = 0; i < 45; i++){
+       var div = document.createElement('div');
+
+       div.onclick = function(){
+         alert("you clicked on a box #" + i);
+       };
+
+       document.getElementsByTagName('section')[0].appendChild(div);
+     }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Using Map In Javascript</title>
+</head>
+<body>
+
+  <script>
+
+    // Why use a map?
+    // * Use something other than a string as a key
+    // * Utilize key value pairs that are always the same values.
+    // * Need to iterate in order
+
+    var course = new Map();
+
+    course.set('react', {description: 'UI'});
+    course.set('jest', {description: 'testing'});
+
+    console.log(course);
+    console.log(course.react);
+    console.log(course.get('react'));
+    
+
+    var details = new Map([
+        [new Date(), 'today'],
+        ['items', [1,2]]
+
+    ]);
+
+    console.log('Size of details Map: ' + details.size);
+
+    details.forEach(function(item){
+        console.log(item);
+    });
+
+  </script>
+
+
+</body>
+</html>

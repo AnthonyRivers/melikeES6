@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Using The Spread Operator</title>
+</head>
+<body>
+
+
+<script>
+    var cats = ['Tabby', 'Siamese', 'Persian'];
+    var dogs = ['Golden Retriever', 'Pug', 'Schnauzer'];
+
+    // This will contain the actual cats array and dogs array
+    // instead of just their content.
+    var animals = ['Whale', 'Giraffe', cats, 'Snake', dogs, 'Coyote'];
+    console.log(animals);
+
+    // Using the spread operator ... the  
+    animals = ['Whale', 'Giraffe', ...cats, 'Snake', ...dogs, 'Coyote'];
+    
+    console.log(animals);
+    
+</script>
+</body>
+</html>
