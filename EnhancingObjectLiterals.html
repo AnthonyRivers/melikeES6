@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Enhancing Object Literals</title>
+</head>
+<body>
+  <script>
+        // old way
+        var cat = {
+            meow: function(times){
+                console.log(Array(times+1).join("meow"));
+            },
+            purr: function(times){
+                
+                console.log(Array(times+1).join("purr"));
+
+            },
+            snore: function(times){
+
+                console.log(Array(times+1).join("snore"));
+            }
+        };
+
+        cat.meow(3);
+        cat.purr(4);
+        cat.snore(5);
+
+        // new way
+        var dog = {
+            bark(times) {
+                console.log("bark".repeat(times));
+            },
+            snore(times){
+                console.log('snore'.repeat(times));
+            },
+            woof(times){
+                console.log('woof'.repeat(times));
+            }
+        }
+
+        dog.bark(3);
+        dog.woof(4);
+        dog.snore(5);
+  </script>
+
+</body>
+</html>
