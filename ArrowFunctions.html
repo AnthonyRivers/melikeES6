@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Arrow Functions</title>
+<meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        var students = [];
+
+        // arrow functions use the token => that looks like an arrow
+        // These are also known as lambda functions in other programming
+        // languages. 
+        var studentList = (students) =>{ console.log(students);};
+
+        // curly brackets aren't required if only one expression is present.
+        var studentList = (students) => console.log(students);
+
+        // parentheses are required when no parameters are present.
+        var studentList = () => console.log(students);
+
+        // When only one paramater is being used, the parentheses are optional
+        var studentList = students => console.log(students);
+
+
+        studentList(['Joe', 'Cindy', 'Jeanne']);
+
+
+        // Common use cases for arrow functions:
+        // - array manipulation
+        // - array filtering
+        // - code that make use of asynchronous callbacks or promises
+        
+    </script>
+
+</body>
+</html>
