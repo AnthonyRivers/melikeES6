@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Using Classes in ES6</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+<script>
+
+    class Vehicle {
+        constructor(description, wheels){
+            this.description = description;
+            this.wheels = wheels;
+        }
+
+        describeYourself(){
+            console.log(`I am a ${this.description} with ${this.wheels} wheels`);
+        }
+    }
+
+    var coolSkiVan = new Vehicle('cool ski van ', 4);
+
+    coolSkiVan.describeYourself();
+</script>
+</body>
+</html>

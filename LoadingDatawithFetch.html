@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loading Data With Fetch</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+    <script>
+
+        // The fetch function is alwasy going to take in the URL for an API
+        // Fetch returns the entire response object.
+        fetch('http://api.open-notify.org/astros.json')
+            .then(res => res.json())
+            .then(console.log);
+
+        // Fetch can also be return from functions when something a little
+        // more reusable needs to be build.
+        const getPeopleInSpace = () => fetch('http://api.open-notify.org/astros.json').then(res => res.json());
+
+
+        const spaceNames = () => 
+            getPeopleInSpace()
+                .then(json => json.people)
+                .then(people => people.map(p => p.name))
+                .then(names => names.join(', '));
+
+        getPeopleInSpace().then(console.log);
+        spaceNames().then(console.log);
+
+        
+
+    </script>
+
+</body>
+</html>

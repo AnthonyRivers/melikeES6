@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Async Fucntions With Fetch</title>
+<meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        // Fetch is by definition asynchronous.
+        const githubRequest = async(loginName) => {
+            try {
+                var response = await fetch(`https://api.github.com/users/${loginName}/followers`);
+
+                var json = await response.json();
+                var followerList = json.map(user => user.login);
+                console.log(followerList);
+
+            } catch(e) {
+                    console.log("Data didn't load ", e);
+             }
+        };
+
+        githubRequest('AnthonyRivers');
+
+        /** self execute fuction wrapping the whole 
+         anonymous function in parantheses to call
+         the function as soon as the page loads.
+         The async and await keyword make it work 
+         without them the code would execute in order 
+         without waiting. Using async and await makes it
+         asynchronous so it awaits the Fetch and parsing
+         of the Jason data before mapping over it.
+         */
+       (async(loginName) => {
+            try {
+                var response = await fetch(`https://api.github.com/users/${loginName}/followers`);
+
+                var json = await response.json();
+                var followerList = json.map(user => user.login);
+                console.log(followerList);
+
+            } catch(e) {
+                    console.log("Data didn't load ", e);
+             }
+        })('AnthonyRivers');
+
+    </script>
+</body>
+</html>
